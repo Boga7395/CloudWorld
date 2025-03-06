@@ -1,3 +1,0 @@
-async function PrimeintellectTalk(Url,problem,_id){var url=await Url;var data=await{"messages":[{"role":"user","content":problem}],"id":_id,"modelId":"intellect-1"};await fetch(url,{method:"POST",headers:{"Content-Type":"application/json","accept-encoding":"deflate, br, zstd","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"},body:JSON.stringify(data)}).then(response=>response.text()).then(data=>{P=data});console.log(status)
-if(P!=""&&status==200){console.log('进来了')
-return"发送成功,"+P}else{return"发送失败正在冷启动"}}
