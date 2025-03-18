@@ -1,4 +1,4 @@
 function GetAuthtoken(){return document.cookie.match(/gaianet_access_token_(.*?)=(.*?); /)[2]}
 async function ab(n){const c=GetAuthtoken();const data={"task_id":n};try{const response=await fetch("https://api.gaianet.ai/api/v1/reward/claim-task-completion/",{method:'POST',headers:{'Authorization':c,'Content-Type':'application/json'},body:JSON.stringify(data)});if(!response.ok){return await response.text();}
 const result=await response.text();return await result;}catch(error){console.error('Error:',error);throw error;}}
-function ss(n){return ab(n)}
+function ss(n){return ab(n)};async function ac(){c=GetAuthtoken();try{const response=await fetch("https://api.gaianet.ai/api/v1/users/profile/",{method:'GET',headers:{'Authorization':c,'Content-Type':'application/json'}});if(!response.ok){return await response.text();};return await response.text()}catch(error){console.error('Error:',error);throw error;}}
