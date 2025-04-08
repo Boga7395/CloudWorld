@@ -11,5 +11,9 @@
         "TaskName": "Megateth>领水",
         "ProxyType": "Proxy",
         "TaskDetails": "Megateth>领水>注意事项：\\n使用国内51代理进行领取申请。"
+    },{
+        "TaskName": "Megateth>查询",
+        "ProxyType": "Proxy",
+        "TaskDetails": "Megateth>查询>注意事项：\\n使用国内51代理进行领取申请。"
     }]
 }
