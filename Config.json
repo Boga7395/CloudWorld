@@ -13,15 +13,15 @@
         "TaskDetails": "Megateth>领水>注意事项：\\n使用国内51代理进行领取申请。"
     },{
         "TaskName": "Megateth>查询",
-        "ProxyType": "Proxy",
-        "TaskDetails": "Megateth>查询>注意事项：\\n使用国内51代理进行领取申请。"
+        "ProxyType": "S5Proxy",
+        "TaskDetails": "Megateth>查询>注意事项：\\n使用默认代理进行查询。"
     },{
         "TaskName": "GblendFauect>领水",
         "ProxyType": "Proxy",
         "TaskDetails": "Gblend>领水>注意事项：\\n使用国内51代理进行领取申请。"
     },{
         "TaskName": "GblendFauect>查询",
-        "ProxyType": "Proxy",
-        "TaskDetails": "Gblend>查询>注意事项：\\n使用国内51代理进行领取申请。"
+        "ProxyType": "S5Proxy",
+        "TaskDetails": "Gblend>查询>注意事项：\\n使用默认代理进行查询。"
     }]
 }
