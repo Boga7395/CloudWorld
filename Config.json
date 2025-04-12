@@ -23,5 +23,14 @@
         "TaskName": "GblendFauect>查询",
         "ProxyType": "S5Proxy",
         "TaskDetails": "Gblend>查询>注意事项：\\n使用默认代理进行查询。"
-    }]
+    },{
+        "TaskName": "Theoriq>白名单申请",
+        "ProxyType": "Proxy",
+        "TaskDetails": "Theoriq>白名单申请>注意事项：\\n使用国内51代理进行领取申请。"
+    }
+    
+    
+    
+    
+    ]
 }
