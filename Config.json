@@ -27,10 +27,18 @@
         "TaskName": "Theoriq>白名单申请",
         "ProxyType": "Proxy",
         "TaskDetails": "Theoriq>白名单申请>注意事项：\\n使用国内51代理进行领取申请。"
+    },{
+        "TaskName": "Beamable>注册任务",
+        "ProxyType": "S5Proxy",
+        "TaskDetails": "Beamable>注册任务>注意事项：\\n使用默认代理进行注册。\\n格式要求:序号----钱包地址----私钥\\n返回格式:序号----钱包地址----私钥----Cookies\\n后续执行签到任务只需要将头次的生成的成功文件保存好,再次投递进入使用即可\\n推特对接打码使用:Kocaptcha"
+    },{
+        "TaskName": "Beamable>日常任务",
+        "ProxyType": "S5Proxy",
+        "TaskDetails": "Beamable>日常任务>注意事项：\\n使用默认代理进行注册。\\n格式要求:序号----钱包地址----私钥\\n返回格式:序号----钱包地址----私钥----Cookies\\n后续执行签到任务只需要将头次的生成的成功文件保存好,再次投递进入使用即可\\n推特对接打码使用:Kocaptcha"
+    },{
+        "TaskName": "Chaoslabs>白名单申请",
+        "ProxyType": "S5Proxy",
+        "TaskDetails": "Chaoslabs>日常任务>注意事项：\\n使用默认代理进行注册。\\n格式要求:序号----钱包地址----私钥\\n返回格式:序号----钱包地址----私钥----邮箱地址\\n对接打码：YesCaptcha \\n推特对接打码使用：Kocaptcha"
     }
-    
-    
-    
-    
     ]
 }
