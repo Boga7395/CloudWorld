@@ -295,3 +295,159 @@ function getRandomProfession() {
   const randomIndex = Math.floor(Math.random() * professions.length);
   return professions[randomIndex];
 }
+const generateAdditionalInfo = () => {
+  const infoOptions = [
+    "We are looking forward to exploring synergies with your team.",
+    "We believe our technology aligns well with Codex.xyz's mission and goals.",
+    "Our company offers unique insights and resources that can benefit Codex.xyz.",
+    "We are confident that collaborating with Codex.xyz will bring value to both sides.",
+    "We would love to partner with you and make a difference together.",
+    "We are eager to collaborate and innovate alongside Codex.xyz.",
+    "I came across Codex.xyz on Twitter and was deeply impressed by your vision.",
+    "I’m particularly interested in your workflow around decentralized identity and smart contract orchestration.",
+    "As a Web3 developer focusing on DAO governance tooling, Codex caught my eye with its automation layer.",
+    "Codex’s modular approach to task coordination perfectly aligns with what I build for on-chain ops.",
+    "I’ve been following Codex updates via community calls and would love to get involved early.",
+    "As someone working on AI agents + Web3 task flows, I find Codex uniquely positioned in the space.",
+    "I discovered Codex.xyz through GitHub discussions and found your concept of code-driven whitelist automation fascinating."
+  ];
+  return infoOptions[Math.floor(Math.random() * infoOptions.length)];
+};
+
+// 生成邮件标题
+const generateEmailSubject = (company, language, additionalInfo, isCompany) => {
+  const subjects = {
+    en: isCompany ? [
+      `Whitelist Request for ${company} on Codex.xyz`,
+      `Applying for Whitelist Access to Codex.xyz from ${company}`,
+      `${company} - Whitelist Application for Codex.xyz`,
+      `${company} Request to Join Codex.xyz Whitelist`,
+      `Partnership Opportunity with ${company} - Whitelist Request on Codex.xyz`,
+      `${additionalInfo} - Whitelist Application for ${company} on Codex.xyz`,
+      `Hello Codex.xyz - ${company} Application for Whitelist`,
+      `${company} Whitelist Request for Codex.xyz - Access Request`
+    ] : [
+      `Whitelist Request from ${company} - ${additionalInfo}`,
+      `Hello Codex.xyz - ${company}'s Whitelist Application`,
+      `Application for ${company}'s Whitelist Access`,
+      `Personal Request for ${company}'s Whitelist - ${additionalInfo}`,
+      `${company} - ${additionalInfo} Whitelist Application`,
+      `${company} - ${additionalInfo} Access Request`,
+      `Request for ${company} to Join Codex.xyz Whitelist`,
+      `Exploring Collaboration: ${company} Whitelist Request`
+    ],
+    zh: isCompany ? [
+      `关于${company}在Codex.xyz的白名单申请`,
+      `${company}在Codex.xyz的白名单权限申请`,
+      `申请加入Codex.xyz的白名单 - ${company}`,
+      `${company} - 请求加入Codex.xyz白名单`,
+      `来自${company}的Codex.xyz白名单申请`,
+      `${additionalInfo} - ${company}申请Codex.xyz的白名单`,
+      `您好，${company} - 申请Codex.xyz白名单`,
+      `${company} - 请求加入Codex.xyz的白名单`
+    ] : [
+      `来自${company}的个人白名单申请 - ${additionalInfo}`,
+      `个人请求加入Codex.xyz白名单 - ${company}`,
+      `${company}个人白名单申请 - ${additionalInfo}`,
+      `${company} - ${additionalInfo} 个人白名单申请`,
+      `${company} - ${additionalInfo} 访问请求`,
+      `白名单请求：${company}个人申请`,
+      `与${company}合作机会 - ${additionalInfo}`,
+      `申请加入Codex.xyz - ${company}个人白名单`
+    ],
+    zh_tw: isCompany ? [
+      `關於${company}在Codex.xyz的白名單申請`,
+      `${company}在Codex.xyz的白名單權限申請`,
+      `申請加入Codex.xyz的白名單 - ${company}`,
+      `${company} - 請求加入Codex.xyz白名單`,
+      `來自${company}的Codex.xyz白名單申請`,
+      `${additionalInfo} - ${company}申請Codex.xyz的白名單`,
+      `您好，${company} - 申請Codex.xyz白名單`,
+      `${company} - 請求加入Codex.xyz的白名單`
+    ] : [
+      `來自${company}的個人白名單申請 - ${additionalInfo}`,
+      `個人請求加入Codex.xyz白名單 - ${company}`,
+      `${company}個人白名單申請 - ${additionalInfo}`,
+      `${company} - ${additionalInfo} 個人白名單申請`,
+      `${company} - ${additionalInfo} 訪問請求`,
+      `白名單請求：${company}個人申請`,
+      `與${company}合作機會 - ${additionalInfo}`,
+      `申請加入Codex.xyz - ${company}個人白名單`
+    ]
+  };
+
+  return subjects[language][Math.floor(Math.random() * subjects[language].length)];
+};
+
+// 生成邮件正文
+const generateEmailBody = (company, name, email, language, additionalInfo, isCompany) => {
+  const bodyTemplates = {
+    en: isCompany ? [
+      `My name is ${name}, and I am reaching out to request whitelist access for ${company} on Codex.xyz. We believe our partnership with your platform can bring tremendous value. ${additionalInfo}`,
+      `I am ${name}, representing ${company}, and I would like to apply for whitelist access to Codex.xyz. We are excited to explore the opportunities for collaboration with your team. ${additionalInfo}`,
+      `Hi Codex.xyz team, I'm ${name} from ${company}. We would love to be a part of your whitelist and explore how our cooperation can benefit both sides. ${additionalInfo}`,
+      `Dear Codex.xyz team, I am writing to express ${company}'s interest in joining your whitelist. We are confident that collaborating with you will be beneficial. ${additionalInfo}`,
+      `Hello Codex.xyz, this is ${name} from ${company}. We are interested in becoming part of your whitelist and would like to discuss potential partnership opportunities. ${additionalInfo}`,
+      `We hope to establish a long-term relationship with Codex.xyz, leveraging our combined strengths for mutual success. ${additionalInfo}`
+    ] : [
+      `Hi Codex.xyz, I’m ${name} from ${company}. I’ve been following your work and am really excited about the potential to collaborate. I’d love to join the whitelist and contribute to your community. ${additionalInfo}`,
+      `Hi Codex.xyz, I’m ${name}, and I represent ${company}. We are looking forward to the opportunity to work with your team. ${additionalInfo}`,
+      `Dear Codex.xyz, I’m ${name} from ${company}, and I’d like to express our interest in joining your whitelist. ${additionalInfo}`,
+      `Hello Codex.xyz, I’m ${name}, representing ${company}. We believe our synergy with your platform can lead to great things. ${additionalInfo}`,
+      `Hi, I’m ${name}. I came across Codex.xyz and found your platform’s mission very compelling. ${additionalInfo}`,
+      `Hello Codex.xyz, I’m ${name} from ${company}. We are looking forward to exploring synergies between our teams. ${additionalInfo}`
+    ],
+    zh: isCompany ? [
+      `您好，我是${name}，来自${company}，我希望能为${company}申请Codex.xyz的白名单权限。我们相信与您平台的合作将会带来巨大的价值。${additionalInfo}`,
+      `我是${company}的${name}，我们希望申请加入Codex.xyz的白名单，并探索与贵平台的合作机会。${additionalInfo}`,
+      `尊敬的Codex.xyz团队，我是${company}的${name}，我们希望申请贵平台的白名单，并期待与您团队的合作。${additionalInfo}`,
+      `尊敬的Codex.xyz，您好，我是${company}的${name}，我们非常期待与贵平台的合作，申请加入Codex.xyz白名单。${additionalInfo}`,
+      `您好，Codex.xyz团队，我是${name}，代表${company}，我们希望申请加入Codex.xyz白名单，期待与贵平台的进一步合作。${additionalInfo}`,
+      `我们希望与Codex.xyz建立长期合作关系，利用双方的优势共同取得成功。${additionalInfo}`
+    ] : [
+      `您好，我是${name}，来自${company}，我希望能为${company}申请Codex.xyz的白名单权限。我们相信与您平台的合作将会带来巨大的价值。${additionalInfo}`,
+      `您好，Codex.xyz，我是${name}，我通过推特了解到了你们的项目，非常期待与贵团队的合作。${additionalInfo}`,
+      `尊敬的Codex.xyz团队，我是${name}，我代表${company}申请加入贵平台的白名单，希望能够获得进一步合作的机会。${additionalInfo}`
+    ],
+    zh_tw: isCompany ? [
+      `您好，我是${name}，來自${company}，我希望能為${company}申請Codex.xyz的白名單權限。相信與貴平台的合作將帶來巨大的價值。${additionalInfo}`,
+      `我是${company}的${name}，我們希望申請加入Codex.xyz的白名單，並探索與貴平台的合作機會。${additionalInfo}`,
+      `尊敬的Codex.xyz團隊，我是${company}的${name}，我們希望申請貴平台的白名單，並期待與您團隊的合作。${additionalInfo}`,
+      `尊敬的Codex.xyz，您好，我是${company}的${name}，我們期待與貴平台的合作，申請加入Codex.xyz白名單。${additionalInfo}`,
+      `您好，Codex.xyz團隊，我是${name}，代表${company}，我們希望申請加入Codex.xyz白名單，期待與貴平台的進一步合作。${additionalInfo}`,
+      `我們希望與Codex.xyz建立長期合作關係，利用雙方的優勢共同取得成功。${additionalInfo}`
+    ] : [
+      `您好，我是${name}，來自${company}，我希望能為${company}申請Codex.xyz的白名單權限。相信與貴平台的合作將帶來巨大的價值。${additionalInfo}`,
+      `您好，Codex.xyz，我是${name}，我通過推特了解到了你們的項目，非常期待與貴團隊的合作。${additionalInfo}`,
+      `尊敬的Codex.xyz團隊，我是${name}，我代表${company}申請加入貴平台的白名單，希望能夠獲得進一步合作的機會。${additionalInfo}`
+    ]
+  };
+
+  return bodyTemplates[language][Math.floor(Math.random() * bodyTemplates[language].length)];
+};
+
+// 随机语言
+const getRandomLanguage = () => {
+  const languages = ["en", "zh", "zh_tw"];
+  return languages[Math.floor(Math.random() * languages.length)];
+};
+
+// ⚠️ 这是同步版本：生成唯一邮件列表
+const generateUniqueEmails = (company, name, email) => {
+  const language = getRandomLanguage();
+  const additionalInfo = generateAdditionalInfo();
+  const isCompany = company != '';
+  const subject = generateEmailSubject(company, language, additionalInfo, isCompany);
+  const body = generateEmailBody(company, name, email, language, additionalInfo, isCompany);
+
+  data = {
+    subject,
+    body
+  };
+  return JSON.stringify(data);
+};
+
+function getEmaildata(company, name, email){
+const emails = generateUniqueEmails(company, name, email);
+    return emails
+}
